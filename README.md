@@ -1,8 +1,6 @@
 # Password Manager With Fingerprint Auth
 Secured through the master password!
-**Device Used: **
-
-Macbook (MacOS) 
+**Device Used:** Macbook (MacOS) 
 ## How to Run: 
 ### Dependencies: 
 ```pip3 install the dependencies```
@@ -47,7 +45,7 @@ The regular passwords are encrypted/ hashed with a key that is generated using t
 In the code, password.py: 
 
 
-```
+```python3
    def derive_key(self, master_password, salt):
        salt = base64.urlsafe_b64decode(salt)
        kdf = PBKDF2HMAC(
