@@ -16,11 +16,11 @@ Ensure that your device has a fingerprint reader
 
 # About the Project 
 
-## **Biometric Authentication **
+## ** Biometric Authentication **
 If you click “Use Password…” it will initiate a trap interrupt to close the application, enforcing fingerprint authentication (biometrics) as the only way to pass through this phase. 
 It will only let you authenticate if you have the right fingerprint. 
 
-## **Sign Up **
+## ** Sign Up **
 If it's your first time using this app, it will prompt you to sign up to create your master password. The master password will be encrypted with the bcrypt algorithm with a work factor of 15, stored in the json file, /passwords/master_password.json. 
 
 You will have to insert your password twice to ensure they match, as this is unable to be changed. 
