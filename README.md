@@ -12,15 +12,15 @@ Ensure that your device has a fingerprint reader
 ```python3 main.py```
 
 
-# About the Project 
+## About the Project 
 
-## **Biometric Authentication**
+### **Biometric Authentication**
 <img width="236" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/77ddc0ea-e2ae-4b4a-909f-79f458284218">
 
 If you click “Use Password…” it will initiate a trap interrupt to close the application, enforcing fingerprint authentication (biometrics) as the only way to pass through this phase. 
 It will only let you authenticate if you have the right fingerprint. 
 
-## **Sign Up**
+### **Sign Up**
 <img width="543" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/2d4b93fa-88cb-4c57-a20e-703b5a605919">
 
 If it's your first time using this app, it will prompt you to sign up to create your master password. The master password will be encrypted with the bcrypt algorithm with a work factor of 15, stored in the json file, /passwords/master_password.json. 
@@ -31,12 +31,12 @@ The password should also be very strong as if someone knows the master password,
 
 Because it is encrypted, it can only be brute-forced to get in, and the work factor of 15 helps prevent this. 
 
-## **Login**
+### **Login**
 <img width="543" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/889d6e68-97ad-4b0c-ac98-322a96b32386">
 
 With more than 5 unsuccessful login attempts, it kicks you out of the session and closes the window. This helps prevent brute force attacks as you would have to re-authenticate with an authorized fingerprint. 
 
-## **Home Page**
+### **Home Page**
 <img width="910" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/83eabe89-f7b5-4c13-85d6-a99273ecb318">
 
 This is the homepage of the application once the user is successfully authenticated. It displays all of the passwords, with useful features such as:
@@ -50,8 +50,6 @@ This is the homepage of the application once the user is successfully authentica
 The regular passwords are encrypted/ hashed with a key that is generated using the master password. The key and master password will be stored in the heap, and will only persist for the duration of the application when it is opened. The passwords are also salted to mitigate hash table attacks by forcing attackers to re-compute them using the salts for each password.
 
 In the code, password.py: 
-
-
 ```python3
    def derive_key(self, master_password, salt):
        salt = base64.urlsafe_b64decode(salt)
@@ -69,7 +67,7 @@ In the code, password.py:
 
 This creates a symmetric/ secret key that is generated using the master password. Therefore, without knowing the master password, it will not be able to decrypt the other regular passwords. 
 
-## **Generate Password**
+### **Generate Password**
 
 Generates a random password with numbers 0-9, and letters “A-Z” both capitalized and lowercase, and symbols ['@', '#', '$', '%', '&', '_']. The generated password will be in the heap until the password generator is closed. 
 
