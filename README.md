@@ -15,10 +15,14 @@ Ensure that your device has a fingerprint reader
 # About the Project 
 
 ## **Biometric Authentication**
+<img width="236" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/77ddc0ea-e2ae-4b4a-909f-79f458284218">
+
 If you click “Use Password…” it will initiate a trap interrupt to close the application, enforcing fingerprint authentication (biometrics) as the only way to pass through this phase. 
 It will only let you authenticate if you have the right fingerprint. 
 
 ## **Sign Up**
+<img width="543" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/2d4b93fa-88cb-4c57-a20e-703b5a605919">
+
 If it's your first time using this app, it will prompt you to sign up to create your master password. The master password will be encrypted with the bcrypt algorithm with a work factor of 15, stored in the json file, /passwords/master_password.json. 
 
 You will have to insert your password twice to ensure they match, as this is unable to be changed. 
@@ -28,9 +32,12 @@ The password should also be very strong as if someone knows the master password,
 Because it is encrypted, it can only be brute-forced to get in, and the work factor of 15 helps prevent this. 
 
 ## **Login**
+<img width="543" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/889d6e68-97ad-4b0c-ac98-322a96b32386">
+
 With more than 5 unsuccessful login attempts, it kicks you out of the session and closes the window. This helps prevent brute force attacks as you would have to re-authenticate with an authorized fingerprint. 
 
 ## **Home Page**
+<img width="910" alt="image" src="https://github.com/reakunen/password-manager/assets/72232783/83eabe89-f7b5-4c13-85d6-a99273ecb318">
 
 This is the homepage of the application once the user is successfully authenticated. It displays all of the passwords, with useful features such as:
 
